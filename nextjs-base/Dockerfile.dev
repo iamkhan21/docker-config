@@ -1,0 +1,12 @@
+FROM node:16-alpine
+
+LABEL maintainer="mail@iamkhan.tech"
+ENV UPDATED_AT 2021-09-28
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+CMD ["npm", "run", "dev"]
